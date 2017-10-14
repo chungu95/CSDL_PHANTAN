@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using QLVT.View;
+using QLVT.model;
 
 namespace QLVT
 {
@@ -10,6 +12,10 @@ namespace QLVT
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static ChiNhanh chinhanh;
+        public static NhanVien nhanvien;
+
         [STAThread]
         static void Main()
         {
@@ -20,7 +26,7 @@ namespace QLVT
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin()); 
         }
     }
 }
