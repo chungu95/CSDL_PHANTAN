@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraBars;
 
 namespace QLVT
 {
@@ -16,6 +7,13 @@ namespace QLVT
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            lblStatusChiNhanh.Text = Program.chinhanh.Chinhanh;
+            lblStatusHoten.Text = Program.nhanvien.Hoten;
+            lblStatusManv.Text = Program.nhanvien.Manv;
         }
     }
 }
