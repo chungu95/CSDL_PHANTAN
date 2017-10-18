@@ -11,13 +11,13 @@ namespace QLVT.model
 {
     class NhanVien
     {
-        private String _manv;
+        private int _manv;
         private String _hoten;
         private String _diachi;
         private DateTime _ngaysinh;
         private String _macn;
 
-        public string Manv
+        public int Manv
         {
             get
             {
@@ -75,11 +75,11 @@ namespace QLVT.model
             }
         }
 
-        public static NhanVien getThongtinNhanvien(string manv)
+        public static NhanVien getThongtinNhanvien(int manv)
         {
             NhanVien nhanvien = null;
             SqlConnection con = Connector.GetConnection();
-            string sql = "EXEC SP_THONGTINNHANVIEN '" + manv + "'";
+            string sql = "EXEC SP_THONG_TIN_NHAN_VIEN '" + manv + "'";
             try
             {
                 SqlCommand sqlCommand = new SqlCommand(sql, con);
@@ -89,7 +89,7 @@ namespace QLVT.model
                 if (dataTable.Rows.Count != 0)
                 {
                     nhanvien = new NhanVien();
-                    nhanvien.Manv = dataTable.Rows[0][0].ToString();
+                    nhanvien.Manv = Int32.Parse(dataTable.Rows[0][0].ToString());
                     nhanvien.Hoten = dataTable.Rows[0][1].ToString();
                     nhanvien.Diachi = dataTable.Rows[0][2].ToString();
                     nhanvien.Ngaysinh = Convert.ToDateTime(dataTable.Rows[0][3].ToString());

@@ -11,9 +11,10 @@ namespace QLVT
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblStatusChiNhanh.Text = Program.chinhanh.Chinhanh;
-            lblStatusHoten.Text = Program.nhanvien.Hoten;
-            lblStatusManv.Text = Program.nhanvien.Manv;
+            lblStatusChiNhanh.Text = Program.CHI_NHANH.Chinhanh;
+            lblStatusHoten.Text = Program.NHAN_VIEN.Hoten;
+            lblStatusManv.Text = Program.NHAN_VIEN.Manv.ToString();
+
         }
     }
 }

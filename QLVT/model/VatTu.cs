@@ -1,75 +1,79 @@
 ﻿using QLVT.Api;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace QLVT.model
 {
-    class Kho
+    class VatTu
     {
-        private String _makho;
-        private String _tenkho;
-        private String _diachi;
-        private String _chinhanh;
+        private String _mavt;
+        private String _tenvt;
+        private String _donvitinh;
+        private int _soluongton;
 
-        public string Makho
+        public string Mavt
         {
             get
             {
-                return _makho;
+                return _mavt;
             }
 
             set
             {
-                _makho = value;
+                _mavt = value;
             }
         }
 
-        public string Tenkho
+        public string Tenvt
         {
             get
             {
-                return _tenkho;
+                return _tenvt;
             }
 
             set
             {
-                _tenkho = value;
+                _tenvt = value;
             }
         }
 
-        public string Diachi
+        public string Donvitinh
         {
             get
             {
-                return _diachi;
+                return _donvitinh;
             }
 
             set
             {
-                _diachi = value;
+                _donvitinh = value;
             }
         }
 
-        public string Chinhanh
+        public int Soluongton
         {
             get
             {
-                return _chinhanh;
+                return _soluongton;
             }
 
             set
             {
-                _chinhanh = value;
+                _soluongton = value; 
             }
         }
 
-        public static DataTable getDSKho(string macn)
+        public static DataTable DSVattu() 
         {
             SqlConnection con = Connector.GetConnection();
-            string sql = "SELECT MAKHO, TENKHO FROM Kho WHERE MACN = '" + macn + "'";
+            string sql = "SELECT * FROM VATTU ORDER BY TENVT";
             try
-            { 
+            {
                 SqlCommand sqlCommand = new SqlCommand(sql, con);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 DataTable dataTable = new DataTable();
@@ -82,7 +86,7 @@ namespace QLVT.model
             }
             catch (Exception)
             {
-                return null; 
+                return null;
             }
             finally { Connector.CloseConnection(con); }
         }
