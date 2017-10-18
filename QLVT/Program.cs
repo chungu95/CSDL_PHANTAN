@@ -13,8 +13,8 @@ namespace QLVT
         /// The main entry point for the application.
         /// </summary>
         /// 
-        public static ChiNhanh chinhanh;
-        public static NhanVien nhanvien;
+        public static ChiNhanh CHI_NHANH; 
+        public static NhanVien NHAN_VIEN; 
 
         [STAThread]
         static void Main()
