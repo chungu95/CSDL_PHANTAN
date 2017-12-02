@@ -56,18 +56,24 @@
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Spreadsheet.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraSpreadsheet.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -94,6 +100,9 @@
     <Compile Include="model\Login.cs" />
     <Compile Include="model\NhanVien.cs" />
     <Compile Include="model\PhieuNhap.cs" />
+    <Compile Include="model\ReportDHCCPN.cs" />
+    <Compile Include="model\ReportHDNV.cs" />
+    <Compile Include="model\ReportTKSLN.cs" />
     <Compile Include="model\Server.cs" />
     <Compile Include="model\VatTu.cs" />
     <Compile Include="transaction\T_DatHang.cs" />
@@ -142,11 +151,47 @@
     <Compile Include="View\frmPhieuXuat.Designer.cs">
       <DependentUpon>frmPhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmReportHDNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmReportHDNV.Designer.cs">
+      <DependentUpon>frmReportHDNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmReportTKSLN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmReportTKSLN.Designer.cs">
+      <DependentUpon>frmReportTKSLN.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmVatTu.Designer.cs">
       <DependentUpon>frmVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\report1DDHCCPN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\report1DDHCCPN.Designer.cs">
+      <DependentUpon>report1DDHCCPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reportDDHCCPN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\reportDDHCCPN.Designer.cs">
+      <DependentUpon>reportDDHCCPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reportHDNV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\reportHDNV.Designer.cs">
+      <DependentUpon>reportHDNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\reportTKSLN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\reportTKSLN.Designer.cs">
+      <DependentUpon>reportTKSLN.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\frmDatHang.resx">
       <DependentUpon>frmDatHang.cs</DependentUpon>
@@ -180,8 +225,26 @@
     <EmbeddedResource Include="View\frmPhieuXuat.resx">
       <DependentUpon>frmPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmReportHDNV.resx">
+      <DependentUpon>frmReportHDNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmReportTKSLN.resx">
+      <DependentUpon>frmReportTKSLN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmVatTu.resx">
       <DependentUpon>frmVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\report1DDHCCPN.resx">
+      <DependentUpon>report1DDHCCPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reportDDHCCPN.resx">
+      <DependentUpon>reportDDHCCPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reportHDNV.resx">
+      <DependentUpon>reportHDNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reportTKSLN.resx">
+      <DependentUpon>reportTKSLN.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
