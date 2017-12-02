@@ -87,13 +87,17 @@
     <Compile Include="Api\DataConverter.cs" />
     <Compile Include="model\ChiNhanh.cs" />
     <Compile Include="model\CTDDH.cs" />
+    <Compile Include="model\CTPN.cs" />
+    <Compile Include="model\db_response\CTDDHResponse.cs" />
     <Compile Include="model\DonHang.cs" />
     <Compile Include="model\Kho.cs" />
     <Compile Include="model\Login.cs" />
     <Compile Include="model\NhanVien.cs" />
+    <Compile Include="model\PhieuNhap.cs" />
     <Compile Include="model\Server.cs" />
     <Compile Include="model\VatTu.cs" />
     <Compile Include="transaction\T_DatHang.cs" />
+    <Compile Include="transaction\T_PhieuNhap.cs" />
     <Compile Include="View\frmDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +136,12 @@
     <Compile Include="View\frmPhieuNhap.Designer.cs">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmPhieuXuat.Designer.cs">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="View\frmPhieuNhap.resx">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmPhieuXuat.resx">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmVatTu.resx">
       <DependentUpon>frmVatTu.cs</DependentUpon>

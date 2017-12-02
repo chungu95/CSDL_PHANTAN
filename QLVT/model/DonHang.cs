@@ -110,7 +110,7 @@ namespace QLVT.model
             using (SqlCommand sqlCommand = con.CreateCommand())
             {
                 sqlCommand.CommandText = "SP_THEM_DON_HANG"; 
-                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@MasoDDH", donhang.MaDH);
                 sqlCommand.Parameters.AddWithValue("@NhaCC", donhang.NhaCC);
                 sqlCommand.Parameters.AddWithValue("@MANV", donhang.Manv);
@@ -141,8 +141,9 @@ namespace QLVT.model
                 SqlCommand sqlCommand = new SqlCommand(sql, con);
                 sqlCommand.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
             finally { Connector.CloseConnection(con); }
         }
