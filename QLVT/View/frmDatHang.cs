@@ -60,7 +60,7 @@ namespace QLVT.View
                     if (donhang.Chitiet[i].Mavt.Equals(chitiet.Mavt))
                     {
                         donhang.Chitiet[i].Soluong += chitiet.Soluong;
-                        donhang.Chitiet[i].Dongia += chitiet.Dongia;
+                        donhang.Chitiet[i].Dongia = chitiet.Dongia;
                         isExisted = true;
                         break;
                     }

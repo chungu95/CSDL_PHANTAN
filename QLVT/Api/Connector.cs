@@ -60,7 +60,7 @@ namespace QLVT.Api
         {
             _datasourceName = "LOCALHOST";
             ConnectionString = "Data Source=" + _datasourceName + ";Initial Catalog=" + DatabaseName +
-                               ";User ID=sa;Password=0989762667";
+                               ";User ID=sa;Password=123456";
         }
     }
 }

@@ -103,6 +103,7 @@
             // 
             // cbbChiNhanh
             // 
+            this.cbbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbChiNhanh.FormattingEnabled = true;
             this.cbbChiNhanh.Location = new System.Drawing.Point(185, 36);
             this.cbbChiNhanh.Name = "cbbChiNhanh";

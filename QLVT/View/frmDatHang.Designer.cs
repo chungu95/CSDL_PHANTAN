@@ -36,6 +36,7 @@
             this.txtMaDDH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRefrestDetails = new System.Windows.Forms.Button();
             this.btnThemChiTiet = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.btnHoanTat = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnRefrestDetails = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             // 
             // cbbKho
             // 
+            this.cbbKho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKho.FormattingEnabled = true;
             this.cbbKho.Location = new System.Drawing.Point(103, 137);
             this.cbbKho.Name = "cbbKho";
@@ -139,6 +140,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi Tiết Đơn Đặt Hàng";
             // 
+            // btnRefrestDetails
+            // 
+            this.btnRefrestDetails.Location = new System.Drawing.Point(42, 201);
+            this.btnRefrestDetails.Name = "btnRefrestDetails";
+            this.btnRefrestDetails.Size = new System.Drawing.Size(75, 23);
+            this.btnRefrestDetails.TabIndex = 7;
+            this.btnRefrestDetails.Text = "Làm lại";
+            this.btnRefrestDetails.UseVisualStyleBackColor = true;
+            this.btnRefrestDetails.Click += new System.EventHandler(this.btnRefrestDetails_Click);
+            // 
             // btnThemChiTiet
             // 
             this.btnThemChiTiet.Location = new System.Drawing.Point(151, 201);
@@ -183,6 +194,7 @@
             // 
             // cbbMaVatTu
             // 
+            this.cbbMaVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaVatTu.FormattingEnabled = true;
             this.cbbMaVatTu.Location = new System.Drawing.Point(97, 49);
             this.cbbMaVatTu.Name = "cbbMaVatTu";
@@ -244,16 +256,6 @@
             this.label7.Size = new System.Drawing.Size(179, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "ĐƠN ĐẶT HÀNG";
-            // 
-            // btnRefrestDetails
-            // 
-            this.btnRefrestDetails.Location = new System.Drawing.Point(42, 201);
-            this.btnRefrestDetails.Name = "btnRefrestDetails";
-            this.btnRefrestDetails.Size = new System.Drawing.Size(75, 23);
-            this.btnRefrestDetails.TabIndex = 7;
-            this.btnRefrestDetails.Text = "Làm lại";
-            this.btnRefrestDetails.UseVisualStyleBackColor = true;
-            this.btnRefrestDetails.Click += new System.EventHandler(this.btnRefrestDetails_Click);
             // 
             // frmDatHang
             // 
