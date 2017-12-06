@@ -94,12 +94,14 @@
     <Compile Include="model\ChiNhanh.cs" />
     <Compile Include="model\CTDDH.cs" />
     <Compile Include="model\CTPN.cs" />
+    <Compile Include="model\CTPX.cs" />
     <Compile Include="model\db_response\CTDDHResponse.cs" />
     <Compile Include="model\DonHang.cs" />
     <Compile Include="model\Kho.cs" />
     <Compile Include="model\Login.cs" />
     <Compile Include="model\NhanVien.cs" />
     <Compile Include="model\PhieuNhap.cs" />
+    <Compile Include="model\PhieuXuat.cs" />
     <Compile Include="model\ReportDHCCPN.cs" />
     <Compile Include="model\ReportHDNV.cs" />
     <Compile Include="model\ReportTKSLN.cs" />

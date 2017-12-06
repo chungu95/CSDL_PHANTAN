@@ -22,7 +22,16 @@ namespace QLVT.model
             this._dongia = _dongia;
         }
 
+
+
         public CTPN() { }
+
+        public CTPN(string _mapn, string _mavt, int _soluong)
+        {
+            this._mapn = _mapn;
+            this._mavt = _mavt;
+            this._soluong = _soluong;
+        }
 
         public string Mapn
         {
