@@ -57,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnGhi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -76,6 +77,7 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // barManager1
             // 
@@ -125,12 +127,14 @@
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 0;
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnSua
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.Id = 1;
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -143,6 +147,7 @@
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 3;
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -167,7 +172,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 420);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 426);
             this.barDockControlBottom.Size = new System.Drawing.Size(774, 23);
             // 
             // barDockControlLeft
@@ -175,14 +180,14 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 369);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 375);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(774, 51);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 369);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 375);
             // 
             // lbChiNhanh
             // 
@@ -209,6 +214,7 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Mã NV";
+            this.label1.Visible = false;
             // 
             // txtMaNV
             // 
@@ -225,6 +231,7 @@
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Họ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtHo
             // 
@@ -298,11 +305,22 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Lương";
             // 
+            // btnGhi
+            // 
+            this.btnGhi.Location = new System.Drawing.Point(363, 397);
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.Size = new System.Drawing.Size(75, 23);
+            this.btnGhi.TabIndex = 23;
+            this.btnGhi.Text = "button1";
+            this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 443);
+            this.ClientSize = new System.Drawing.Size(774, 449);
+            this.Controls.Add(this.btnGhi);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -324,6 +342,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmNhanVien";
             this.Text = "frmNhanVien";
+            this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -362,5 +381,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbChiNhanh;
         private System.Windows.Forms.Label lbChiNhanh;
+        private System.Windows.Forms.Button btnGhi;
     }
 }

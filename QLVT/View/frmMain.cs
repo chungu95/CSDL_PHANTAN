@@ -64,5 +64,148 @@ namespace QLVT
                 }
             }
         }
+        private Form IsExist(Type fType)
+        {
+            foreach (var f in MdiChildren)
+                if (f.GetType() == fType)
+                    return f;
+            return null;
+        }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmNhanVien));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmVatTu));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmVatTu();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmKho));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmKho();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDonDatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmDatHang));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmDatHang();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmPhieuNhap));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmPhieuNhap();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnPhieuXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmPhieuXuat));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmPhieuXuat();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnTKSLN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmReportTKSLN));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmReportTKSLN();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnHDNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmReportHDNV));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmReportHDNV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

@@ -261,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 463);
+            this.ClientSize = new System.Drawing.Size(809, 532);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHoanTat);

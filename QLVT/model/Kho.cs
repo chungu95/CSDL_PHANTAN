@@ -67,7 +67,7 @@ namespace QLVT.model
         public static DataTable getDSKho(string macn)
         {
             SqlConnection con = Connector.GetConnection();
-            string sql = "SELECT MAKHO, TENKHO FROM Kho WHERE MACN = '" + macn + "'";
+            string sql = "SELECT MAKHO, TENKHO, DIACHI FROM Kho WHERE MACN = '" + macn + "'";
             try
             { 
                 SqlCommand sqlCommand = new SqlCommand(sql, con);
