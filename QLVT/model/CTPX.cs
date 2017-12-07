@@ -132,18 +132,19 @@ namespace QLVT.model
             for(int i = 0; i < chitiet.Count; i++)
             {
                 int soluongcapnhat = 0;
-                if (soluong - chitiet[i].Soluong < 0)
+                if (chitiet[i].Soluong - soluong < 0)
                 {
                     if (!CapNhatSoluong(mavt, mapn, soluongcapnhat))
                         return false;
                     soluong = soluong - chitiet[i].Soluong;
                 }
-                else if(soluong - chitiet[i].Soluong ==0)
+                else if(chitiet[i].Soluong - soluong == 0)
                 {
-                    CapNhatSoluong(mavt, mapn, soluongcapnhat);
+                    CapNhatSoluong(mavt, mapn, 0);
                     break;
                 }else
                 {
+                    soluongcapnhat = chitiet[i].Soluong - soluong;
                     CapNhatSoluong(mavt, mapn, soluongcapnhat);
                     break;
                 }
