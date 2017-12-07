@@ -75,6 +75,30 @@ namespace QLVT.model
             }
         }
 
+
+
+        public static DataTable getDsNhanVien( string macn)
+        {
+            SqlConnection con = Connector.GetConnection();
+            string sql = "SELECT MANV, HO, TEN, DIACHI, NGAYSINH, LUONG, MACN from NhanVien where  MACN= '" + macn + "'";
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(sql, con);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                if (dataTable.Rows.Count != 0)
+                    return dataTable;
+                else
+                    return null;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally { Connector.CloseConnection(con); }
+        }
         public static NhanVien getThongtinNhanvien(int manv)
         {
             NhanVien nhanvien = null;

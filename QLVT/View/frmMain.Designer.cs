@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnVatTu = new DevExpress.XtraBars.BarButtonItem();
@@ -35,6 +36,7 @@
             this.btnDonDatHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhieuXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDHCCPN = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -44,15 +46,20 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatusChiNhanh = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatusManv = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatusHoten = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDHCCPN = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnTKSLN = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnHDNV = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -66,9 +73,11 @@
             this.btnDonDatHang,
             this.btnPhieuNhap,
             this.btnPhieuXuat,
-            this.btnDHCCPN});
+            this.btnDHCCPN,
+            this.btnTKSLN,
+            this.btnHDNV});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 11;
+            this.ribbon.MaxItemId = 13;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2,
@@ -82,36 +91,49 @@
             this.btnNhanVien.Caption = "Nhân Viên";
             this.btnNhanVien.Id = 3;
             this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
             // btnVatTu
             // 
             this.btnVatTu.Caption = "Vật Tư";
             this.btnVatTu.Id = 4;
             this.btnVatTu.Name = "btnVatTu";
+            this.btnVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVatTu_ItemClick);
             // 
             // btnKho
             // 
             this.btnKho.Caption = "Kho";
             this.btnKho.Id = 5;
             this.btnKho.Name = "btnKho";
+            this.btnKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKho_ItemClick);
             // 
             // btnDonDatHang
             // 
             this.btnDonDatHang.Caption = "Đơn Đặt Hàng";
             this.btnDonDatHang.Id = 6;
             this.btnDonDatHang.Name = "btnDonDatHang";
+            this.btnDonDatHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonDatHang_ItemClick);
             // 
             // btnPhieuNhap
             // 
             this.btnPhieuNhap.Caption = "Phiếu Nhập";
             this.btnPhieuNhap.Id = 7;
             this.btnPhieuNhap.Name = "btnPhieuNhap";
+            this.btnPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuNhap_ItemClick);
             // 
             // btnPhieuXuat
             // 
             this.btnPhieuXuat.Caption = "Phiếu Xuất";
             this.btnPhieuXuat.Id = 8;
             this.btnPhieuXuat.Name = "btnPhieuXuat";
+            this.btnPhieuXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuXuat_ItemClick);
+            // 
+            // btnDHCCPN
+            // 
+            this.btnDHCCPN.Caption = "DHCCPN";
+            this.btnDHCCPN.Id = 10;
+            this.btnDHCCPN.Name = "btnDHCCPN";
+            this.btnDHCCPN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDHCCPN_ItemClick);
             // 
             // ribbonPage2
             // 
@@ -170,9 +192,17 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Báo Cáo";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDHCCPN);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // ribbonStatusBar
             // 
@@ -211,18 +241,35 @@
             this.lblStatusHoten.Size = new System.Drawing.Size(49, 17);
             this.lblStatusHoten.Text = "Họ tên: ";
             // 
-            // ribbonPageGroup1
+            // ribbonPageGroup8
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnDHCCPN);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnTKSLN);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
-            // btnDHCCPN
+            // btnTKSLN
             // 
-            this.btnDHCCPN.Caption = "DHCCPN";
-            this.btnDHCCPN.Id = 10;
-            this.btnDHCCPN.Name = "btnDHCCPN";
-            this.btnDHCCPN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDHCCPN_ItemClick);
+            this.btnTKSLN.Caption = "TKSLN";
+            this.btnTKSLN.Id = 11;
+            this.btnTKSLN.Name = "btnTKSLN";
+            this.btnTKSLN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKSLN_ItemClick);
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnHDNV);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
+            // 
+            // btnHDNV
+            // 
+            this.btnHDNV.Caption = "HDNV";
+            this.btnHDNV.Id = 12;
+            this.btnHDNV.Name = "btnHDNV";
+            this.btnHDNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHDNV_ItemClick);
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // frmMain
             // 
@@ -232,6 +279,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
@@ -240,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +319,10 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatusHoten;
         private DevExpress.XtraBars.BarButtonItem btnDHCCPN;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem btnTKSLN;
+        private DevExpress.XtraBars.BarButtonItem btnHDNV;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }

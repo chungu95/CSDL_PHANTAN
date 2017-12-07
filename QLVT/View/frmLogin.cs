@@ -48,7 +48,7 @@ namespace QLVT.View
             if (con != null && con.State == ConnectionState.Open)
             {
                 Login.doLogin();
-                new frmPhieuNhap().Show(); Hide(); 
+                new frmMain().Show(); Hide(); 
             }
             else
             {
