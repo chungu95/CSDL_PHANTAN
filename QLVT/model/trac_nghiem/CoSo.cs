@@ -8,36 +8,22 @@ using System.Linq;
 
 namespace QLVT.model
 {
-    class ChiNhanh
+    class CoSo
     {
-        private String _macn;
-        private String _chinhanh;
+        private String _macs;
+        private String _tencs;
         private String _diachi;
-        private String _sodt;
 
-        public string Macn
+        public string Macs
         {
             get
             {
-                return _macn;
+                return _macs;
             }
 
             set
             {
-                _macn = value;
-            }
-        }
-
-        public string Chinhanh
-        {
-            get
-            {
-                return _chinhanh;
-            }
-
-            set
-            {
-                _chinhanh = value;
+                _macs = value;
             }
         }
 
@@ -54,20 +40,20 @@ namespace QLVT.model
             }
         }
 
-        public string Sodt
+        public string Tencs
         {
             get
             {
-                return _sodt;
+                return _tencs;
             }
 
             set
             {
-                _sodt = value;
+                _tencs = value;
             }
         }
 
-        public static DataTable getServer() 
+        public static DataTable getServer()
         {
             Connector.firstTimeBuild();
             String sql = "SELECT * FROM VIEW_DS_SERVER";
@@ -80,7 +66,7 @@ namespace QLVT.model
             return dataTable;
         }
 
-        public static DataTable getDSChiNhanh()
+        public static DataTable getDSCoSo()
         {
             String sql = "SELECT MACS, TENCS FROM COSO";
             SqlConnection con = Connector.GetConnection();
@@ -92,11 +78,11 @@ namespace QLVT.model
             return dataTable;
         }
 
-        public static ChiNhanh getChinhanh(string macn)
+        public static CoSo getCosoViaSVName(string serverName)  
         {
-            ChiNhanh chinhanh = null;
+            CoSo coso = null;
             SqlConnection con = Connector.GetConnection();
-            string sql = "SELECT * FROM CHINHANH WHERE MACN = '" + macn + "'";
+            string sql = "SELECT * FROM COSO WHERE SV_NAME = '" + serverName + "'";
             try
             {
                 SqlCommand sqlCommand = new SqlCommand(sql, con);
@@ -105,11 +91,10 @@ namespace QLVT.model
                 sqlDataAdapter.Fill(dataTable);
                 if (dataTable.Rows.Count != 0)
                 {
-                    chinhanh = new ChiNhanh();
-                    chinhanh.Macn = dataTable.Rows[0][0].ToString();
-                    chinhanh.Chinhanh = dataTable.Rows[0][1].ToString();
-                    chinhanh.Diachi = dataTable.Rows[0][2].ToString();
-                    chinhanh.Sodt = dataTable.Rows[0][3].ToString();
+                    coso = new CoSo();
+                    coso.Macs = dataTable.Rows[0][0].ToString();
+                    coso.Tencs = dataTable.Rows[0][1].ToString();
+                    coso.Diachi = dataTable.Rows[0][2].ToString();
                 }
             }
             catch (Exception)
@@ -117,7 +102,7 @@ namespace QLVT.model
                 // 
             }
             finally { Connector.CloseConnection(con); }
-            return chinhanh;
+            return coso;
         }
     }
 }

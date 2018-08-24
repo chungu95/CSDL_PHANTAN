@@ -159,5 +159,20 @@ namespace QLVT.model
             finally { Connector.CloseConnection(con); }
         }
 
+        public static void XoaPhieuXuat(string mapx)
+        {
+            SqlConnection con = Connector.GetConnection();
+            string sql = "DELETE FROM PhieuXuat WHERE MAPX = '" + mapx + "'";
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(sql, con);
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+            }
+            finally { Connector.CloseConnection(con); }
+        }
+
     }
 }

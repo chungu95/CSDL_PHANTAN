@@ -9,24 +9,23 @@ using System.Threading.Tasks;
 
 namespace QLVT.model
 {
-    class NhanVien
+    class GiangVien
     {
-        private int _manv;
+        private int _magv;
         private String _hoten;
-        private String _diachi;
-        private DateTime _ngaysinh;
-        private String _macn;
+        private String _hocvi; 
+        private String _makhoa; 
 
-        public int Manv
+        public int Magv
         {
             get
             {
-                return _manv;
+                return _magv;
             }
 
             set
             {
-                _manv = value;
+                _magv = value;
             }
         }
 
@@ -43,39 +42,31 @@ namespace QLVT.model
             }
         }
 
-        public string Diachi
+        public string Hocvi
         {
             get
             {
-                return _diachi;
+                return _hocvi;
             }
 
             set
             {
-                _diachi = value;
+                _hocvi = value;
             }
         }
 
-        public DateTime Ngaysinh
-        {
-            get { return _ngaysinh; }
-            set { _ngaysinh = value; }
-        }
-
-        public string Macn
+        public string Makhoa
         {
             get
             {
-                return _macn;
+                return _makhoa;
             }
 
             set
             {
-                _macn = value;
+                _makhoa = value;
             }
         }
-
-
 
         public static DataTable getDsNhanVien(string macn)
         {

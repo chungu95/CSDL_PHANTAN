@@ -5,12 +5,12 @@ using System.Data;
 using System.Windows.Forms;
 namespace QLVT.View
 {
-    public partial class frmDatHang : DevExpress.XtraEditors.XtraForm
+    public partial class frmMonHoc : DevExpress.XtraEditors.XtraForm
     {
         private DonHang donhang;
         private CTDDH chitiet; 
 
-        public frmDatHang()
+        public frmMonHoc()
         {
             InitializeComponent();
             donhang = new DonHang(); 
@@ -30,7 +30,7 @@ namespace QLVT.View
                 donhang.MaDH = txtMaDDH.Text.Trim();
                 donhang.NhaCC = txtNhaCungCap.Text.Trim();
                 donhang.MaKho = cbbKho.SelectedValue.ToString().Trim();
-                donhang.Manv = Program.NHAN_VIEN.Manv;
+ //               donhang.Manv = Program.NHAN_VIEN.Manv;
                 if (donhang.Chitiet.Count == 0)
                 {
                     MessageBox.Show("Vui lòng thêm vật tư vào đơn hàng");
@@ -40,12 +40,13 @@ namespace QLVT.View
                 if (T_DatHang.LuuDonHang(donhang))
                 {
                     MessageBox.Show("Thêm thành công!");
+                    loadDsCTDDH();
                     refreshComponents();
                 }
             }
         }
 
-        private void btnThemChiTiet_Click(object sender, EventArgs e)
+        private void btnThemChiTiet_Clic(object sender, EventArgs e)
         {
             if (checkSoLuong() && checkGia())
             {
@@ -86,7 +87,7 @@ namespace QLVT.View
 
         private void loadDSKho()
         {
-            DataTable dt = Kho.getDSKho(Program.CHI_NHANH.Macn);
+            DataTable dt = Kho.getDSKho(Program.MaCoSo);
             if (dt != null)
             {
                 cbbKho.ValueMember = "MAKHO";
@@ -110,6 +111,7 @@ namespace QLVT.View
             try {
                 if (Int32.Parse(txtSoLuong.Text.Trim()) <= 0)
                 {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
                     return false;
                 }
             } catch 
@@ -126,6 +128,7 @@ namespace QLVT.View
             {
                 if (float.Parse(txtDonGia.Text.Trim()) <= 0)
                 {
+                    MessageBox.Show("Đơn giá phải lớn hơn 0");
                     return false;
                 }
             }
@@ -170,6 +173,25 @@ namespace QLVT.View
             {
                 donhang.Chitiet.Clear();
             }
+        }
+        private void loadDsCTDDH()
+        {
+            DataTable dt = CTDDH.getDsCTDDH(txtMaDDH.Text);
+            if (dt != null)
+            {
+                gridControl1.DataSource = dt;
+            }
+           
+        }
+
+        private void btnLapDonHang_Click(object sender, EventArgs e)
+        {
+            gridControl1.DataSource = null;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

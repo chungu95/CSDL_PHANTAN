@@ -80,7 +80,7 @@ namespace QLVT
         }
         private void loadDsKho()
         {
-            DataTable dt = Kho.getDSKho(Program.CHI_NHANH.Macn);
+            DataTable dt = Kho.getDSKho(Program.MaCoSo);
             if (dt != null)
             {
                 gridControl1.DataSource = dt;
@@ -138,7 +138,7 @@ namespace QLVT
 
                         spCommand.CommandText = "SP_THEM_KHO";
                         spCommand.CommandType = CommandType.StoredProcedure;
-                        spCommand.Parameters.AddWithValue("@MACN", Program.CHI_NHANH.Macn);
+                        spCommand.Parameters.AddWithValue("@MACN", Program.MaCoSo);
                         spCommand.Parameters.AddWithValue("@MAKHO", makho.Trim());
                         spCommand.Parameters.AddWithValue("@TENKHO", tenkho.Trim());
                         spCommand.Parameters.AddWithValue("@DIACHI", diachi.Trim());
@@ -176,7 +176,7 @@ namespace QLVT
                             spCommand.CommandType = CommandType.StoredProcedure;
 
                             spCommand.Parameters.AddWithValue("@MAKHO", makho.Trim());
-                            spCommand.Parameters.AddWithValue("@MACN", Program.CHI_NHANH.Macn);
+                            spCommand.Parameters.AddWithValue("@MACN", Program.MaCoSo);
                             spCommand.Parameters.AddWithValue("@TENKHO", tenkho.Trim());
                             spCommand.Parameters.AddWithValue("@DIACHI", diachi.Trim());
 

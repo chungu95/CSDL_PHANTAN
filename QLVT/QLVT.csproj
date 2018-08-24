@@ -104,16 +104,27 @@
     <Compile Include="model\PhieuXuat.cs" />
     <Compile Include="model\ReportDHCCPN.cs" />
     <Compile Include="model\ReportHDNV.cs" />
+    <Compile Include="model\ReportTHNX.cs" />
     <Compile Include="model\ReportTKSLN.cs" />
     <Compile Include="model\Server.cs" />
+    <Compile Include="model\trac_nghiem\CoSo.cs" />
+    <Compile Include="model\trac_nghiem\GiangVien.cs" />
+    <Compile Include="model\trac_nghiem\User.cs" />
     <Compile Include="model\VatTu.cs" />
     <Compile Include="transaction\T_DatHang.cs" />
     <Compile Include="transaction\T_PhieuNhap.cs" />
-    <Compile Include="View\frmDatHang.cs">
+    <Compile Include="transaction\T_PhieuXuat.cs" />
+    <Compile Include="View\frmAddLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmDatHang.Designer.cs">
-      <DependentUpon>frmDatHang.cs</DependentUpon>
+    <Compile Include="View\frmAddLogin.Designer.cs">
+      <DependentUpon>frmAddLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMonHoc.Designer.cs">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmKho.cs">
       <SubType>Form</SubType>
@@ -159,6 +170,12 @@
     <Compile Include="View\frmReportHDNV.Designer.cs">
       <DependentUpon>frmReportHDNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmReportTHNX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmReportTHNX.Designer.cs">
+      <DependentUpon>frmReportTHNX.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmReportTKSLN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,14 +206,23 @@
     <Compile Include="View\reportHDNV.Designer.cs">
       <DependentUpon>reportHDNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\reportTKNX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\reportTKNX.Designer.cs">
+      <DependentUpon>reportTKNX.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\reportTKSLN.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\reportTKSLN.Designer.cs">
       <DependentUpon>reportTKSLN.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\frmDatHang.resx">
-      <DependentUpon>frmDatHang.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmAddLogin.resx">
+      <DependentUpon>frmAddLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMonHoc.resx">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmKho.resx">
       <DependentUpon>frmKho.cs</DependentUpon>
@@ -230,6 +256,9 @@
     <EmbeddedResource Include="View\frmReportHDNV.resx">
       <DependentUpon>frmReportHDNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmReportTHNX.resx">
+      <DependentUpon>frmReportTHNX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmReportTKSLN.resx">
       <DependentUpon>frmReportTKSLN.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\reportHDNV.resx">
       <DependentUpon>reportHDNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\reportTKNX.resx">
+      <DependentUpon>reportTKNX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\reportTKSLN.resx">
       <DependentUpon>reportTKSLN.cs</DependentUpon>
@@ -270,6 +302,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

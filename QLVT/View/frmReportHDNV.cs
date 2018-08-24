@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using QLVT.Api;
 using System.Data.SqlClient;
 using DevExpress.XtraReports.UI;
+using QLVT.model;
 
 namespace QLVT.View
 {
@@ -44,6 +45,7 @@ namespace QLVT.View
                 cmbMaNV.DataSource = dt;
             }
         }
+
 
         private void btnIn_Click(object sender, EventArgs e)
         {
@@ -98,6 +100,13 @@ namespace QLVT.View
         private void frmReportHDNV_Load(object sender, EventArgs e)
         {
             loadDsNhanVien();
+        }
+
+        private void cmbMaNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NhanVien nhanvien = NhanVien.getThongtinNhanvien(Convert.ToInt32( cmbMaNV.SelectedValue.ToString()));
+            txtTenNV.Text = nhanvien.Hoten; 
+           
         }
     }
 }

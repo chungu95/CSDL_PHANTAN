@@ -10,8 +10,8 @@ namespace QLVT.Api
 {
     class Connector
     {
-        private static string _datasourceName = "localhost";
-        private static string _databaseName = "QL_VATTU";
+        private static string _datasourceName = "DESKTOP-KA8V1NA";
+        private static string _databaseName = "TRACNGHIEM";
 
         public static string ConnectionString { get; set; } = "";
 
@@ -50,17 +50,17 @@ namespace QLVT.Api
                 if (connection.State == ConnectionState.Open)
                     connection.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine(ex.Message);
+                //to do something...    
             }
         }
 
         public static void firstTimeBuild()
         {
-            _datasourceName = "LOCALHOST";
+            _datasourceName = "DESKTOP-KA8V1NA";
             ConnectionString = "Data Source=" + _datasourceName + ";Initial Catalog=" + DatabaseName +
-                               ";User ID=sa;Password=0989762667";
+                               ";User ID=sa;Password=123456";
         }
     }
 }

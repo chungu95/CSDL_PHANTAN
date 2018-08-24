@@ -155,17 +155,10 @@ namespace QLVT.View
             return true;
         }
 
-        private void btnXemGia_Click(object sender, EventArgs e)
-        {
-            if(checkSoLuong())
-            txtDonGia.Text = PhieuNhap.tinhGia(Int32.Parse(txtSoLuongNhap.Text), giaVT).ToString();
-        }
-
         private void refreshChiTiet()
         {
             txtSoLuongNhap.Text = "";
             //txtSoLuongDat.Text = "";
-            txtDonGia.Text = ""; 
         }
 
         private void loadSoLuongTrongPhieu(string mavt) 
@@ -182,24 +175,6 @@ namespace QLVT.View
                 if (!isExisted)
                 {
                     txtSoLuongTrongPhieu.Text = "0"; 
-                }
-            }
-        }
-
-        private void loadGiaHienTai(string mavt)
-        {
-            if (chitietPN == null) chitietPN = new List<CTPN>();
-            bool isExisted = false;
-            for (int i = 0; i < chitietPN.Count; i++)
-            {
-                if (chitietPN[i].Mavt.Equals(mavt))
-                {
-                    isExisted = true;
-                    txtGiaHT.Text = chitietPN[i].Dongia.ToString();
-                }
-                if (!isExisted)
-                {
-                    txtSoLuongTrongPhieu.Text = "0";
                 }
             }
         }
@@ -225,9 +200,9 @@ namespace QLVT.View
                 if (phieunhap == null) phieunhap = new PhieuNhap();
                 phieunhap.Mapn = txtMaPhieuNhap.Text.Trim();
                 phieunhap.MaDH = cmbDonDDH.SelectedValue.ToString().Trim();
-                phieunhap.Manv = Program.NHAN_VIEN.Manv;
+  //              phieunhap.Manv = Program.NHAN_VIEN.Manv;
                 phieunhap.Chitiet = chitietPN;
-                if (phieunhap.Chitiet.Count == 0)
+                if (phieunhap.Chitiet == null || phieunhap.Chitiet.Count == 0)
                 {
                     MessageBox.Show("Vui lòng thêm vật tư vào đơn hàng");
                     return;
@@ -246,8 +221,6 @@ namespace QLVT.View
         {
             txtMaPhieuNhap.Text = "";
             txtSoLuongDat.Text = "";
-            txtDonGia.Text = "";
-            txtGiaHT.Text = "";
             txtSoLuongTrongPhieu.Text = "";
             txtSoLuongTrongPhieu.Text = "";
         }

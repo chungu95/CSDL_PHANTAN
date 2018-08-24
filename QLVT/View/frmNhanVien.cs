@@ -86,7 +86,7 @@ namespace QLVT
         }
         private void loadDsNhanVien()
         {
-            DataTable dt = NhanVien.getDsNhanVien(Program.CHI_NHANH.Macn);
+            DataTable dt = NhanVien.getDsNhanVien(Program.MaCoSo);
             if (dt != null)
             {
                 gridControl1.DataSource = dt;
@@ -149,7 +149,7 @@ namespace QLVT
 
                         spCommand.CommandText = "SP_THEM_NHAN_VIEN";
                         spCommand.CommandType = CommandType.StoredProcedure;
-                        spCommand.Parameters.AddWithValue("@MACN", Program.CHI_NHANH.Macn);
+                        spCommand.Parameters.AddWithValue("@MACN", Program.MaCoSo);
                         spCommand.Parameters.AddWithValue("@HO", ho.Trim());
                         spCommand.Parameters.AddWithValue("@TEN", ten.Trim());
                         spCommand.Parameters.AddWithValue("@DIACHI", diachi.Trim());
@@ -190,7 +190,7 @@ namespace QLVT
                             spCommand.CommandType = CommandType.StoredProcedure;
 
                             spCommand.Parameters.AddWithValue("@MANV", manv);
-                            spCommand.Parameters.AddWithValue("@MACN", Program.CHI_NHANH.Macn);
+                            spCommand.Parameters.AddWithValue("@MACN", Program.MaCoSo);
                             spCommand.Parameters.AddWithValue("@HO", ho.Trim());
                             spCommand.Parameters.AddWithValue("@TEN", ten.Trim());
                             spCommand.Parameters.AddWithValue("@DIACHI", diachi.Trim());

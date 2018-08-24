@@ -12,12 +12,13 @@ using System.Data.SqlClient;
 using QLVT.Api;
 using DevExpress.XtraReports.UI;
 using QLVT.model;
+using QLVT.View;
 
 namespace QLVT.View
 {
-    public partial class frmReportTKSLN : DevExpress.XtraEditors.XtraForm
+    public partial class frmReportTHNX : DevExpress.XtraEditors.XtraForm
     {
-        public frmReportTKSLN()
+        public frmReportTHNX()
         {
             InitializeComponent();
         }
@@ -26,7 +27,7 @@ namespace QLVT.View
         {
             String NgayBatDau = txtFromDate.Value.ToString("yyyy/MM/dd");
             String NgayKetThuc = txtToDate.Value.ToString("yyyy/MM/dd");
-         //   MessageBox.Show(Login.Role);
+          //  MessageBox.Show(Login.Role);
 
 
             SqlConnection con = Connector.GetConnection();
@@ -35,9 +36,9 @@ namespace QLVT.View
 
             using (SqlCommand sqlCommand = con.CreateCommand())
             {
-                sqlCommand.CommandText = "SP_CHITIET_SOLUONG_NHAP";
+                sqlCommand.CommandText = "SP_TONG_HOP_NHAP_XUAT";
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@ROLE", Login.Role);
+              
                 sqlCommand.Parameters.AddWithValue("@FROMDATE", NgayBatDau);
                 sqlCommand.Parameters.AddWithValue("@TODATE", NgayKetThuc);
                 //sqlCommand.Parameters.AddWithValue("@MaNhanP", hoadon.MaNhanPhong);
@@ -48,9 +49,9 @@ namespace QLVT.View
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
-                reportTKSLN report = new reportTKSLN();
+                reportTKNX report = new reportTKNX();
                 //  report.TONGTIENTHANHTOAN(mahoadon);
-                report.DataSource = dataTable;
+                report.DataSource = dataTable; 
                 report.ShowPreviewDialog();
 
 

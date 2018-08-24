@@ -1,6 +1,7 @@
 ﻿using QLVT.Api;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
@@ -94,6 +95,29 @@ namespace QLVT.model
                 }
             }
             return result;
+        }
+
+        public static DataTable getDsCTDDH(string maDDH)
+        {
+            SqlConnection con = Connector.GetConnection();
+            string sql = "SELECT MasoDDH, MAVT, SOLUONG, DONGIA from CTDDH where  MasoDDH= '" + maDDH + "'";
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(sql, con);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                if (dataTable.Rows.Count != 0)
+                    return dataTable;
+                else
+                    return null;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally { Connector.CloseConnection(con); }
         }
 
     }

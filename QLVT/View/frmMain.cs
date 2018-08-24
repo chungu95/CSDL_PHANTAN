@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraReports.UI;
 using QLVT.Api;
+using QLVT.model;
 using QLVT.View;
 using System;
 using System.Data;
@@ -13,14 +14,26 @@ namespace QLVT
         public frmMain()
         {
             InitializeComponent();
+            LocQuyen();
+        }
+
+        private void LocQuyen()
+        {
+            if (Login.Role.Equals("USER"))
+            {
+                btnTaoTaiKhoan.Enabled = false;
+            } else if (Login.Role.Equals("CONGTY"))
+            {
+                ribbonPage3.Visible = false;
+                ribbonPage2.Visible = false;
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblStatusChiNhanh.Text = Program.CHI_NHANH.Chinhanh;
-            lblStatusHoten.Text = Program.NHAN_VIEN.Hoten;
-            lblStatusManv.Text = Program.NHAN_VIEN.Manv.ToString();
-
+            lblStatusChiNhanh.Text = Program.CO_SO.Tencs;
+            lblStatusManv.Text = Program.USER.Username;
+            lblStatusQuyen.Text = Program.USER.Userrole;
         }
 
         private void btnDHCCPN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -125,7 +138,7 @@ namespace QLVT
 
         private void btnDonDatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = IsExist(typeof(frmDatHang));
+            var frm = IsExist(typeof(frmMonHoc));
             if (frm != null)
             {
                 frm.Activate();
@@ -134,7 +147,7 @@ namespace QLVT
             else
             {
                 Console.Write(frm);
-                var f = new frmDatHang();
+                var f = new frmMonHoc();
                 f.MdiParent = this;
                 f.Show();
             }
@@ -203,6 +216,41 @@ namespace QLVT
             {
                 Console.Write(frm);
                 var f = new frmReportHDNV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnTHNX_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmReportTHNX));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmReportTHNX();
+                f.MdiParent = this;
+                f.Show();
+            }
+
+        }
+
+        private void btnTaoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = IsExist(typeof(frmAddLogin));
+            if (frm != null)
+            {
+                frm.Activate();
+                Console.Write(frm);
+            }
+            else
+            {
+                Console.Write(frm);
+                var f = new frmAddLogin();
                 f.MdiParent = this;
                 f.Show();
             }

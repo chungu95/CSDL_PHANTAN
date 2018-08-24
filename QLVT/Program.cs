@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using QLVT.View;
 using QLVT.model;
+using System.Data;
+using QLVT.model.trac_nghiem;
 
 namespace QLVT
 {
@@ -13,8 +15,11 @@ namespace QLVT
         /// The main entry point for the application.
         /// </summary>
         /// 
-        public static ChiNhanh CHI_NHANH; 
-        public static NhanVien NHAN_VIEN; 
+        public static CoSo CO_SO;
+        public static User USER = new User();
+        public static DataTable DanhSachCoSo;
+        public static String MaCoSo;
+        public static String SV_NAME;
 
         [STAThread]
         static void Main()

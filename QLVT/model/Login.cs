@@ -9,12 +9,12 @@ namespace QLVT.model
     class Login
     {
         private static string LGName;
-        private static int _username;
+        private static String _username;
         private static string _password;
         private static string _role;
-        private static string _chinhanh;
+        private static string _coso;
 
-        public static int Username
+        public static String Username
         {
             get { return _username; }
             set { _username = value; }
@@ -38,24 +38,39 @@ namespace QLVT.model
             set { LGName = value; }
         }
 
-        public static string Chinhanh
+        public static string Coso
         {
-            get { return _chinhanh; }
-            set { _chinhanh = value; }
+            get
+            {
+                return _coso;
+            }
+
+            set
+            {
+                _coso = value;
+            }
         }
 
         public static void doLogin()
         {
-            string sql = "exec SP_DANG_NHAP '" + Login.LgName + "'";
-            SqlConnection con = Connector.GetConnection();
-            SqlCommand sqlCommand = new SqlCommand(sql, con);
-            SqlDataAdapter data = new SqlDataAdapter(sqlCommand);
-            DataTable dataTable = new DataTable();
-            data.Fill(dataTable);
-            Login.Username = Int32.Parse(dataTable.Rows[0][0].ToString());
-            Login.Role = dataTable.Rows[0][2].ToString();
-            Program.NHAN_VIEN = NhanVien.getThongtinNhanvien(Login.Username);
-            Program.CHI_NHANH = ChiNhanh.getChinhanh(Program.NHAN_VIEN.Macn);
+            try
+            {
+                string sql = "exec SP_DANG_NHAP '" + Login.LgName + "'";
+                SqlConnection con = Connector.GetConnection();
+                SqlCommand sqlCommand = new SqlCommand(sql, con);
+                SqlDataAdapter data = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+                data.Fill(dataTable);
+                Login.Username = dataTable.Rows[0][0].ToString();
+                Login.Role = dataTable.Rows[0][1].ToString();
+                Program.USER.Username = Login.Username;
+                Program.USER.Userrole = Login.Role;
+                //               Program.USER = NhanVien.getThongtinNhanvien(Login.Username);
+                Program.CO_SO = CoSo.getCosoViaSVName(Program.SV_NAME);
+            } catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

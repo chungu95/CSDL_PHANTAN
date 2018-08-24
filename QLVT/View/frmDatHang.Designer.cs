@@ -1,6 +1,6 @@
 ﻿namespace QLVT.View
 {
-    partial class frmDatHang
+    partial class frmMonHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -49,8 +49,12 @@
             this.btnHoanTat = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,7 +70,7 @@
             this.groupBox1.Location = new System.Drawing.Point(32, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(275, 302);
+            this.groupBox1.Size = new System.Drawing.Size(275, 295);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đơn Đặt Hàng";
@@ -135,7 +139,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(306, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(275, 302);
+            this.groupBox2.Size = new System.Drawing.Size(275, 295);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi Tiết Đơn Đặt Hàng";
@@ -158,7 +162,7 @@
             this.btnThemChiTiet.TabIndex = 6;
             this.btnThemChiTiet.Text = "Thêm";
             this.btnThemChiTiet.UseVisualStyleBackColor = true;
-            this.btnThemChiTiet.Click += new System.EventHandler(this.btnThemChiTiet_Click);
+           // this.btnThemChiTiet.Click += new System.EventHandler(this.btnThemChiTiet_Click);
             // 
             // txtDonGia
             // 
@@ -218,6 +222,7 @@
             this.btnLapDonHang.TabIndex = 2;
             this.btnLapDonHang.Text = "Lập Đơn Hàng";
             this.btnLapDonHang.UseVisualStyleBackColor = true;
+            this.btnLapDonHang.Click += new System.EventHandler(this.btnLapDonHang_Click);
             // 
             // btnLuuDonHang
             // 
@@ -246,6 +251,7 @@
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label7
             // 
@@ -257,11 +263,27 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "ĐƠN ĐẶT HÀNG";
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(32, 370);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(549, 172);
+            this.gridControl1.TabIndex = 7;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
             // frmDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 532);
+            this.ClientSize = new System.Drawing.Size(809, 554);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHoanTat);
@@ -276,6 +298,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +328,7 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnRefrestDetails;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
